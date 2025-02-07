@@ -67,17 +67,14 @@
     color: black;
 }
 
-/* 移除下拉菜单相关样式 */
 .dropdown {
     display: none;
 }
 
-/* 添加导航包装器样式 */
 .nav-wrapper {
     position: relative;
 }
 
-/* 顶部导航栏样式 */
 .top-nav {
     display: flex;
     justify-content: space-between;
@@ -91,65 +88,64 @@
     background-color: #666;
     padding: 5px 15px;
     border-radius: 5px;
-    position: relative; /* 添加相对定位 */
+    position: relative;
 }
 
 .nav-left a {
     color: white;
     text-decoration: none;
-    z-index: 2; /* 确保链接在上层 */
+    z-index: 2;
     position: relative;
 }
 
-/* 添加菜单触发器样式 */
+
 .menu-trigger {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
-    width: 30px; /* 设置一个合适的宽度 */
+    width: 30px; 
     cursor: pointer;
 }
 
 .nav-right {
     display: flex;
-    gap: 30px; /* 增加右侧导航项之间的间距 */
+    gap: 30px; 
 }
 
 .nav-right a {
     color: white;
     text-decoration: none;
     font-size: 14px;
-    letter-spacing: 1px; /* 添加字母间距 */
+    letter-spacing: 1px;
 }
 
-/* 下拉菜单样式 */
+
 .side-nav {
     position: absolute;
     left: 20px;
     top: 100%;
     background-color: white;
-    padding: 10px 0; /* 修改内边距 */
+    padding: 10px 0; 
     display: none;
     flex-direction: column;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
     z-index: 100;
-    min-width: 150px; /* 设置最小宽度 */
+    min-width: 150px; 
 }
 
 .side-nav a {
     color: black;
     text-decoration: none;
-    padding: 12px 25px; /* 增加内边距 */
+    padding: 12px 25px;
     white-space: nowrap;
-    letter-spacing: 1px; /* 添加字母间距 */
+    letter-spacing: 1px;
 }
 
 .side-nav a:hover {
     background-color: #f0f0f0;
 }
 
-/* 显示类 */
 .show {
     display: flex;
 }
