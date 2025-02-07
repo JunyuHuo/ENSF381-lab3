@@ -2,49 +2,71 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="style3.css">
+
     <title>Exercise 3</title>
+    <style>
+    
+    </style>
 </head>
 <body>
-    <div class="navbar">
-        <div class="nav-item">SCHULICH School of Engineering
-            <div class="dropdown">
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Research</a>
+    <div class="nav-wrapper">
+        <nav class="top-nav">
+            <div class="nav-left" onclick="toggleMenu()">SCHULICH School of Engineering</div>
+            <div class="nav-right">
+                <a href="#">Electrical Engineering</a>
+                <a href="#">Chemical Engineering Department</a>
+                <a href="#">Biomedical Engineering Department</a>
+                <a href="#">Department of Geometric Engineering</a>
             </div>
+        </nav>
+        <div class="side-nav" id="sideNav">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Research</a>
         </div>
-        <div class="nav-item">Electrical Engineering</div>
-        <div class="nav-item">Chemical Engineering</div>
-        <div class="nav-item">Biomedical Engineering</div>
-        <div class="nav-item">Geomatics Engineering</div>
     </div>
 
-    <div class="container">
-        <div class="item">
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('sideNav');
+            menu.classList.toggle('show');
+        }
+
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('sideNav');
+            const navLeft = document.querySelector('.nav-left');
+            if (!menu.contains(event.target) && !navLeft.contains(event.target)) {
+                menu.classList.remove('show');
+            }
+        });
+    </script>
+
+    <div class="Container">
+        <a href="https://schulich.ucalgary.ca/" class="item">
             <img src="schulich.png" alt="Schulich Logo">
             <h3>SCHULICH School of Engineering</h3>
             <p>UCalgary's hub for innovative engineering education.</p>
-        </div>
-        <div class="item">
+        </a>
+        <a href="https://www.ucalgary.ca/future-students/undergraduate/explore-programs/electrical-engineering" class="item">
             <img src="EE_eng.png" alt="Electrical Engineering Logo">
             <h3>Electrical Engineering Department</h3>
             <p>Powering innovation in electronics and systems.</p>
-        </div>
-        <div class="item">
+        </a>
+        <a href="https://schulich.ucalgary.ca/chemical-petroleum/home" class="item">
             <img src="chemical_eng.jpg" alt="Chemical Engineering Logo">
             <h3>Chemical Engineering Department</h3>
             <p>Advancing processes for a sustainable future.</p>
-        </div>
-        <div class="item">
+        </a>
+        <a href="https://schulich.ucalgary.ca/biomedical/home" class="item">
             <img src="biomedical.png" alt="Biomedical Engineering Logo">
             <h3>Biomedical Engineering Department</h3>
             <p>Engineering solutions for health and medicine.</p>
-        </div>
-        <div class="item">
+        </a>
+        <a href="https://schulich.ucalgary.ca/geomatics" class="item">
             <img src="geomatics_eng.jpeg" alt="Geomatics Engineering Logo">
             <h3>Department of Geomatics Engineering</h3>
             <p>Mapping and analyzing the world around us.</p>
-        </div>
+        </a>
     </div>
 </body>
 </html>

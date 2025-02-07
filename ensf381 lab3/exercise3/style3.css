@@ -1,91 +1,155 @@
-/* Navbar Styling */
-.navbar {
+/* 导航栏样式 */
+.Container {
     display: flex;
-    background-color: #333;
-    height: 60px;
+    flex-direction: row;
+    background-color: rgb(211, 211, 211);  /* 改为浅灰色背景 */
+    margin: 0;
+    padding: 0;
+    margin-left: 0; /* 移除之前的左边距 */
+}
+
+/* 导航项样式 */
+.item {
+    flex: 1;
+    padding: 20px;
+    margin: 0;
+    text-align: center;
+    background-color: rgb(173, 216, 230);  /* 添加浅蓝色背景 */
+    border: 1px solid white;  /* 添加白色边框 */
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    text-decoration: none; /* 移除链接下划线 */
+    color: inherit; /* 继承原有文字颜色 */
+}
+
+/* 标题样式 */
+.item h3 {
+    color: black;  /* 改为黑色文字 */
+    margin: 10px 0;
     font-family: Arial, sans-serif;
-    margin-bottom: 20px;
-}
-
-.nav-item {
-    color: white;
     font-size: 14px;
-    cursor: pointer;
-    line-height: 60px;
-    position: relative;
-    padding: 0 15px;
+    text-align: center;
 }
 
-.nav-item:hover {
-    background-color: #444;
+/* 显示描述文字 */
+.item p {
+    display: block;  /* 显示描述文字 */
+    color: black;
+    font-size: 12px;
+    margin: 5px 0;
+    text-align: center;
 }
 
-/* Dropdown Menu */
-.nav-item .dropdown {
+/* 调整图片大小和样式 */
+.item img {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    display: block;
+}
+
+/* 移除之前的悬停效果和下拉菜单相关样式 */
+.item:first-child {
+    background-color: rgb(173, 216, 230);
+}
+
+.item:first-child h3 {
+    color: black;
+}
+
+.item:hover {
+    background-color: rgb(173, 216, 230);
+}
+
+.item:hover h3 {
+    color: black;
+}
+
+/* 移除下拉菜单相关样式 */
+.dropdown {
     display: none;
+}
+
+/* 添加导航包装器样式 */
+.nav-wrapper {
+    position: relative;
+}
+
+/* 顶部导航栏样式 */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
+}
+
+.nav-left {
+    background-color: #666;
+    padding: 5px 15px;
+    border-radius: 5px;
+    position: relative; /* 添加相对定位 */
+}
+
+.nav-left a {
+    color: white;
+    text-decoration: none;
+    z-index: 2; /* 确保链接在上层 */
+    position: relative;
+}
+
+/* 添加菜单触发器样式 */
+.menu-trigger {
     position: absolute;
-    top: 60px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 30px; /* 设置一个合适的宽度 */
+    cursor: pointer;
+}
+
+.nav-right {
+    display: flex;
+    gap: 30px; /* 增加右侧导航项之间的间距 */
+}
+
+.nav-right a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 1px; /* 添加字母间距 */
+}
+
+/* 下拉菜单样式 */
+.side-nav {
+    position: absolute;
+    left: 20px;
+    top: 100%;
     background-color: white;
-    width: 150px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 10;
+    padding: 10px 0; /* 修改内边距 */
+    display: none;
+    flex-direction: column;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    z-index: 100;
+    min-width: 150px; /* 设置最小宽度 */
 }
 
-.nav-item:hover .dropdown {
-    display: block;
-}
-
-.dropdown a {
-    display: block;
-    padding: 10px;
+.side-nav a {
     color: black;
     text-decoration: none;
-    text-align: center;
+    padding: 12px 25px; /* 增加内边距 */
+    white-space: nowrap;
+    letter-spacing: 1px; /* 添加字母间距 */
 }
 
-.dropdown a:hover {
-    background-color: #ddd;
+.side-nav a:hover {
+    background-color: #f0f0f0;
 }
 
-/* Card Container */
-.container {
+/* 显示类 */
+.show {
     display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    background-color: #f0f8ff;
-    padding: 20px;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-/* Individual Card Styling */
-.item {
-    text-align: center;
-    background-color: #e3f2fd;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 220px;
-}
-
-.item img {
-    width: 100px;
-    height: auto;
-    margin-bottom: 15px;
-}
-
-.item h3 {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.item p {
-    font-size: 14px;
-    color: #666;
-    margin: 0;
 }
